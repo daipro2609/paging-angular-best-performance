@@ -1,0 +1,53 @@
+<div class="dashboard-user-paging-component">
+    <div class="dashboard-user-total-count-page-wrapper mr-3">
+        <span class="record-page">{{getRangeItemShowBaseOnCurrentPage()}}</span>
+    </div>
+    <div class="paging-component-right-region">
+        <div class="dashboard-user-list-item-per-page-wrapper" [class.mr-4]="localPagingStateData.TotalPage > 1">
+            <span class="record-page">1ページ表示件数 : </span>
+            <ng-container *ngFor="let item of itemsPerPage; let i = index">
+                <a class="record-page ml-2"
+                   href="javascript:undefined"
+                   [class.item-per-page-selected]="item === localPagingStateData.PageSize"
+                   (click)="onItemPerPageChange(item)">{{item}}<span
+                        *ngIf="i !== (itemsPerPage.length -1) || showAll">,</span>
+                </a>
+            </ng-container>
+            <a class="record-page ml-2"
+               href="javascript:undefined"
+               *ngIf="showAll"
+               [class.item-per-page-selected]="localPagingStateData.PageSize === 0"
+               (click)="onItemPerPageChange(0)">すべて
+            </a>
+
+        </div>
+        <div class="dashboard-user-list-pagination-wrapper" [hidden]="localPagingStateData.TotalPage < 2">
+              <input class="btn btn-sm-customs prev-submit btn-paging-navigate"
+                     type="submit"
+                     value=""
+                     [disabled]="localPagingStateData.CurrentPage === 1"
+                     (click)="setPage(localPagingStateData.CurrentPage - 1)">
+              <input class="btn btn-sm-customs btn-paging-navigate"
+                     type="submit"
+                     value="1"
+                     [disabled]="localPagingStateData.CurrentPage === 1"
+                     (click)="setPage(1)">
+              <input *ngFor="let page of listPageShow"
+                     class="btn btn-sm-customs btn-paging-navigate"
+                     type="submit"
+                     [value]="page"
+                     [disabled]="isDisabled(page, localPagingStateData.CurrentPage)"
+                     (click)="setPage(page)">
+              <input class="btn btn-sm-customs btn-paging-navigate"
+                     type="submit"
+                     [value]="localPagingStateData.TotalPage"
+                     [disabled]="localPagingStateData.CurrentPage === localPagingStateData.TotalPage"
+                     (click)="setPage(localPagingStateData.TotalPage)">
+              <input class="btn btn-sm-customs next-submit btn-paging-navigate"
+                     type="submit"
+                     value=""
+                     [disabled]="localPagingStateData.CurrentPage === localPagingStateData.TotalPage"
+                     (click)="setPage(localPagingStateData.CurrentPage + 1)">
+        </div>
+    </div>
+</div>

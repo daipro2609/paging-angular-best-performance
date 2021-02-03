@@ -1,0 +1,85 @@
+.page-control {
+    width: 100%;
+    text-align: right;
+    margin-top: 15px;
+}
+
+.btn-sm-customs:disabled {
+    opacity: 1 !important;
+    color: #fff;
+    background-color: #999999;
+    border-color: #999999;
+}
+
+.btn-paging-navigate:disabled {
+    cursor: not-allowed;
+}
+
+.btn-sm-customs {
+    opacity: 0.5 !important;
+    padding: 0;
+    font-size: 15px;
+    line-height: 1.5;
+    border-radius: 7px;
+    width: 35px;
+    min-height: 35px;
+    color: #fff;
+    background-color: #999999;
+    border-color: #999999;
+    margin: 0 2px 0 2px;
+}
+
+.record-page {
+    font-size: 1em;
+}
+
+.page-records {
+    padding: 2px 5px 2px 5px;
+}
+
+.page-records:active {
+    color: black;
+    pointer-events: none;
+    cursor: default;
+}
+
+.readonly-link {
+    color: black;
+    pointer-events: none;
+    cursor: default;
+}
+
+.prev-submit {
+    background: url(../../../../../assets/icon/Prev.png);
+    background-size: 100% 35px;
+}
+
+.next-submit {
+    background: url(../../../../../assets/icon/Next.png);
+    background-size: 100% 35px;
+}
+
+.item-per-page-selected {
+    color: #000;
+    text-decoration: none;
+}
+
+.dashboard-user-paging-component {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.paging-component-right-region {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.dashboard-user-list-pagination-wrapper,
+.dashboard-user-total-count-page-wrapper,
+.dashboard-user-list-item-per-page-wrapper{
+    margin-top: 10px;
+
+}
